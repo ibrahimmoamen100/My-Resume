@@ -1,0 +1,20 @@
+{
+  "terminal.integrated.automationShell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.semi": false,
+  "editor.fontSize": 16,
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "editor.suggestSelection": "first",
+  "terminal.integrated.fontFamily": "fira code",
+  "terminal.integrated.fontSize": 16,
+  "editor.fontFamily": "Fira Code,Consolas, 'Courier New', monospace",
+  "workbench.colorTheme": "Andromeda Colorizer",
+  "editor.fontLigatures": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
+}
