@@ -1029,17 +1029,31 @@ nav .list__links {
 
 }
 
-.item__project:hover .img__project >img {
-  transform: scale(1.2);
-  transition: 0.2s ease-in-out;
+.item__project:hover .img__project img:nth-child(1) {
+  transition:opacity 0.5s ease-in-out;
+  opacity:0;
 }
+
 .img__project {
   width: 100%;
   overflow: hidden;
+  position: relative;
+
+}
+.img__project >img:nth-child(1) {
+  width: 100%;
+  /* overflow: hidden; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  transition:opacity 0.5s ease-in-out;
+  
+
 }
 @media (max-width: 420px){
   .item__project:hover .img__project >img {
-    transform: scale(1.1);
 
   }
   .img__project {
