@@ -92,7 +92,6 @@ function careerWriter() {
 }
 setTimeout(careerWriter, 3500)
 
-
 //TODO:  Weave SVG Rotate
 window.addEventListener("scroll", function () {
   let value = window.scrollY * 0.7
