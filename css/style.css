@@ -15,9 +15,7 @@
   --color-font: #072142;
   --color-font-secondary: #828c96;
   scroll-behavior: smooth;
-  scroll-padding-top:10rem;
-
-
+  scroll-padding-top: 10rem;
 }
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
@@ -33,6 +31,10 @@
   src: url("../fonts/Poppins/Poppins-Regular.ttf");
   font-family: Poppins;
 }
+@font-face {
+  src: url("../fonts/Chela_One/ChelaOne-Regular.ttf");
+  font-family: chela;
+}
 html {
   font-size: 62.5%;
 }
@@ -47,6 +49,7 @@ html {
   max-width: 1200px;
   width: 100%;
   margin: auto;
+  font-family: chela;
 }
 .weave {
   display: block;
@@ -68,7 +71,7 @@ html {
 }
 
 .entire__container {
-  background-color:transparent;
+  background-color: transparent;
   width: 100%;
 }
 
@@ -157,17 +160,15 @@ html {
   position: relative;
 }
 .list__links_menu li a:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 0.5rem;
-  background-color:white;
+  background-color: white;
   top: 50%;
   left: 0%;
   transform: translate(-100%, -50%);
-  transition:0.15s ease-in-out;
-
-
+  transition: 0.15s ease-in-out;
 }
 .list__links_menu.active li:nth-child(1) a {
   animation: fontAni 0.2s linear 0.4s forwards;
@@ -181,11 +182,11 @@ html {
 .list__links_menu.active li:nth-child(4) a {
   animation: fontAni 0.2s linear 0.61s forwards;
 }
-.list__links_menu li a:hover:after{
+.list__links_menu li a:hover:after {
   transform: translate(-50%, -50%);
   left: 50%;
 
-  transition:0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
 
   /* text-decoration: line-through; */
 }
@@ -199,7 +200,6 @@ nav {
   position: sticky;
   top: 0;
   background-color: var(--main-color);
-  
 }
 .nav__bar {
   display: flex;
@@ -224,9 +224,9 @@ nav .logo {
   font-size: 2.5rem;
   color: #fff;
   /* font-weight: bold; */
-  letter-spacing: 1.2px;
+  letter-spacing: 3px;
   word-spacing: 5px;
-  /* font-family: "Open Sans"; */
+  font-family: chela;
 }
 
 nav .list__links {
@@ -245,7 +245,6 @@ nav .list__links {
 }
 .list__links > li > a:hover {
   color: rgb(231, 231, 231);
-
 }
 .list__links > li .icon__humberger {
   width: 4rem;
@@ -311,13 +310,12 @@ nav .list__links {
   background-repeat: no-repeat;
   z-index: 2;
 }
-.home >img {
+.home > img {
   object-fit: cover;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 3;
-
 }
 .home::after {
   content: "";
@@ -564,7 +562,7 @@ nav .list__links {
   margin-bottom: 5rem;
   /* text-align: center; */
   margin-left: 5rem;
-  width: content;
+  width: fit-content;
 }
 
 .global__content2 > span {
@@ -919,7 +917,6 @@ nav .list__links {
   gap: 7rem;
 }
 
-
 .other_skill > h3,
 .skills__base > h3 {
   font-size: 2rem;
@@ -958,14 +955,45 @@ nav .list__links {
     width: 5rem;
   }
   .other_skill_content {
-
     gap: 3rem;
   }
-  }
+}
 
 /* TODO: Start Project Section */
 
 .projects__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.project__filter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+.project__filter > button {
+  font-size: 1.5rem;
+  background: white;
+  border: 1px solid rgba(128, 128, 128, 0.246);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: #333;
+  border-radius: 0.5rem;
+}
+.project__filter > button.active {
+  background: var(--main-color);
+  color: white;
+}
+
+.container__projects {
   width: 100%;
   /* min-height: 100vh; */
   display: grid;
@@ -976,19 +1004,17 @@ nav .list__links {
   justify-items: center;
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
   .projects__section {
     padding: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
   }
 }
-@media (max-width: 420px){
+@media (max-width: 420px) {
   .projects__section {
     padding: 1rem;
 
-    grid-template-columns:1fr;
-
+    grid-template-columns: 1fr;
   }
 }
 .item__project {
@@ -1002,45 +1028,43 @@ nav .list__links {
   overflow: hidden;
   transition: 0.2s ease-in-out;
   border: 0.1rem solid rgba(88, 88, 88, 0.239);
-  box-shadow: 0px 0px  5rem rgba(128, 128, 128, 0.322);
+  box-shadow: 0px 0px 5rem rgba(128, 128, 128, 0.322);
   flex: 1;
-
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .item__project {
     min-width: 200px;
     max-width: 280px;
-    box-shadow: 0px 0px  4rem rgba(128, 128, 128, 0.322);
-
-
+    box-shadow: 0px 0px 4rem rgba(128, 128, 128, 0.322);
   }
 }
-@media (max-width: 420px){
+@media (max-width: 420px) {
   .item__project {
     min-width: 0px;
     max-width: 20rem;
-    box-shadow: 0px 0px  3rem rgba(128, 128, 128, 0.322);
-
+    box-shadow: 0px 0px 3rem rgba(128, 128, 128, 0.322);
   }
 }
 .item__project:hover {
-  box-shadow: 0rem 0rem  3rem rgba(128, 128, 128, 0.691);
-
+  box-shadow: 0rem 0rem 3rem rgba(128, 128, 128, 0.691);
 }
 
 .item__project:hover .img__project img:nth-child(1) {
-  transition:opacity 0.5s ease-in-out;
-  opacity:0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .img__project {
   width: 100%;
   overflow: hidden;
   position: relative;
-
 }
-.img__project >img:nth-child(1) {
+.img__project > img {
+  object-fit: cover;
+  max-height: 22rem;
+}
+.img__project > img:nth-child(1) {
   width: 100%;
   /* overflow: hidden; */
   position: absolute;
@@ -1048,13 +1072,10 @@ nav .list__links {
   left: 0;
   z-index: 1;
   display: block;
-  transition:opacity 0.5s ease-in-out;
-  
-
+  transition: opacity 0.5s ease-in-out;
 }
-@media (max-width: 420px){
-  .item__project:hover .img__project >img {
-
+@media (max-width: 420px) {
+  .item__project:hover .img__project > img {
   }
   .img__project {
   }
@@ -1065,23 +1086,20 @@ nav .list__links {
   height: 100%;
   object-fit: cover;
   transition: 0.2s ease-in-out;
-
 }
 
 .detail__project {
   /* background: red; */
   padding: 0px 1rem;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-@media (max-width: 420px){
+@media (max-width: 420px) {
   .detail__project {
     padding: 0px 0.6rem;
-
   }
-
 }
 .detail__project > h1 {
   text-align: center;
@@ -1091,68 +1109,59 @@ nav .list__links {
   /* color:#333 */
 }
 
-
 .detail__project > span {
   font-size: 1.5rem;
   color: gray;
-  letter-spacing:0.08rem
+  letter-spacing: 0.08rem;
 }
-@media (max-width: 420px){
+@media (max-width: 420px) {
   .detail__project > h1 {
     font-size: 1.5rem;
-
   }
   .detail__project > span {
     font-size: 1rem;
   }
 }
 
-.detail__project > a{
-  width:fit-content;
-  align-self:center;
+.detail__project > a {
+  width: fit-content;
+  align-self: center;
   border: 0.1rem solid transparent;
-  cursor:pointer;
-  padding:1rem 1.5rem;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
   background-color: var(--main-color);
   color: white;
-    border-radius:1rem;
-    letter-spacing:0.2rem;
-    text-transform:inherit;
-    font-weight: bold;
-    font-family: Poppins;
-    margin:  3rem 0px;
-    font-size: 1.3rem;
+  border-radius: 1rem;
+  letter-spacing: 0.2rem;
+  text-transform: inherit;
+  font-weight: bold;
+  font-family: Poppins;
+  margin: 3rem 0px;
+  font-size: 1.3rem;
 }
-@media (max-width: 767px){
-  .detail__project > a{
-    border-radius:0.6rem;
-    padding:0.9rem 0.7rem;
-    letter-spacing:0.2rem;
+@media (max-width: 767px) {
+  .detail__project > a {
+    border-radius: 0.6rem;
+    padding: 0.9rem 0.7rem;
+    letter-spacing: 0.2rem;
     font-weight: bold;
     font-size: 1.3rem;
-    margin:  2rem 0px;
-
-    
+    margin: 2rem 0px;
   }
 }
 
-@media (max-width: 420px){
-  .detail__project > a{
-    border-radius:0.5rem;
-    padding:0.7rem 0.6rem;
-    letter-spacing:0.1rem;
+@media (max-width: 420px) {
+  .detail__project > a {
+    border-radius: 0.5rem;
+    padding: 0.7rem 0.6rem;
+    letter-spacing: 0.1rem;
     font-weight: bold;
     font-size: 0.9rem;
-    margin:  1.2rem 0px;
-
-
+    margin: 1.2rem 0px;
   }
-
-  }
-.detail__project > a:hover{
+}
+.detail__project > a:hover {
   border: 0.1rem solid var(--main-color);
-  background-color:transparent;
+  background-color: transparent;
   color: black;
-
-
 }
