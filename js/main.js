@@ -29,6 +29,11 @@ $(".menu__section").click(function () {
   $(".list__links_menu").removeClass("active")
 })
 
+$(".project__filter button").click(function (e) {
+  $(this).siblings(".project__filter button").removeClass("active")
+  $(e.target).addClass("active")
+})
+
 // TODO: Start GSAP Aniamtion
 
 // const tl = gsap.timeline({ defaults: { ease: "power1.out" } })
@@ -80,9 +85,9 @@ function careerWriter() {
 
   typewriter
     .start()
-    .typeString(" Iam A Front End Web Developer")
+    .typeString("I Work As Front End Developer")
     .pauseFor(2500)
-    .deleteChars(13)
+    .deleteChars(9)
     .typeString("with React Library")
     .pauseFor(2500)
     .deleteAll(1)
@@ -149,6 +154,8 @@ let projects = [
     lang: "all HTML CSS javascript",
     img1: "app1.png",
     img2: "app2.png",
+    wow: "bounceInLeft",
+    wowDelay: "0.03s",
   },
   {
     id: 2,
@@ -158,6 +165,8 @@ let projects = [
     lang: "all HTML CSS react",
     img1: "app1.png",
     img2: "app2.png",
+    wow: "bounceInUp",
+    wowDelay: "0.05s",
   },
   {
     id: 3,
@@ -167,6 +176,8 @@ let projects = [
     lang: "all HTML CSS react",
     img1: "app1.png",
     img2: "app2.png",
+    wow: "bounceInRight",
+    wowDelay: "0.07s",
   },
 ]
 let projectSection = document.querySelector(".container__projects")
@@ -176,7 +187,7 @@ function fitlerFunction(lang = "all") {
 
   let drowProjects = fitlerProj.map((proj) => {
     return `
-    <div class="item__project">
+    <div class="item__project wow ${proj.wow}" data-wow-delay='${proj.wowDelay}'>
     <div class="img__project">
       <img src="./img/${proj.img2}">
       <img src="./img/${proj.img1}" alt="">
@@ -189,28 +200,8 @@ function fitlerFunction(lang = "all") {
   </div>  
   `
   })
-  projectSection.innerHTML = drowProjects
+  projectSection.innerHTML = drowProjects.join("")
 }
 fitlerFunction((lang = "all"))
 
 // TODO: Add Class Active to fitler buttons
-
-let filterButtons = document.querySelectorAll(".project__filter button")
-for (button of filterButtons) {
-  console.log(button)
-  button.addEventListener("click", (e) => {
-    button.classList.remove("active")
-    console.log(button)
-    let buttonClicked = e.target
-    buttonClicked.classList.add("active")
-  })
-}
-// let all = document.querySelector(".all")
-// let web = document.querySelector(".front")
-// let front = document.querySelector(".front")
-
-// all.addEventListener("click", () => {
-//   this.classList.add("active")
-//   web.classList.remove("active")
-//   front.classList.remove("active")
-// })

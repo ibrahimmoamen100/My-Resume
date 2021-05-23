@@ -25,9 +25,8 @@
   <!-- Close Materialize CSS -->
 
 
-  <!-- Animate JS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+  <!-- Wow JS -->
+<link rel="stylesheet" href="./css/animate.css">
 
   <!-- Font Abril Fatface -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -99,7 +98,7 @@
         <div class="content__home">
           <span class="intro__span" id="intro2"></span>
           <h1 id="intro"></h1>
-          <button>MY RESUME</button>
+          <a class="my__resume wow bounceInLeft" data-wow-delay="3.5s" href="http://www.google.com" target="_blank">MY RESUME</a>
         </div>
       </div>
     </div>
@@ -110,19 +109,13 @@
 
       <span class="number__global" data-number='01'></span>
       <div id="about" class="container global__section">
-        <div class="global__content">
-          <span class=''>WHO I AM</span>
+        <div class="  global__content">
+          <span class='wow bounceInLeft' data-wow-delay="0.05s">WHO I AM</span>
           <div class="info_about_section">
-            <span class="about_name  ">IBrahim Moamen</span>
-            <p class="about_info ">I am a student at the Faculty of
-              Social Service at Helwan University ,
-              I entered this Faculty because it is easy to study and thus it will save me a lot of time to learn the
-              field in which I find my passion ,
-              I watched some courses online and attended an course academy to learn the field , I did some projects that
-              display my experience and
-              skills in the field , you can view them in the projects section
+            <span class="about_name wow bounceInRight" data-wow-delay="0.06s">IBrahim Moamen</span>
+            <p class="about_info wow bounceInRight" data-wow-delay="0.07s"> iam Front End Web Developer With React Library ,  I love to communicate with people through my work.
             </p>
-            <div class="img__about  ">
+            <div class="img__about wow bounceInRight" data-wow-delay="0.08s">
               <img src="./img/my customize 22 image.jpg">
             </div>
           </div>
@@ -148,11 +141,11 @@
             <div class="skills__base">
               <h3>basic skills</h3>
               <div class="skills__contents">
-                <div class="item__skill">
+                <div class="item__skill wow bounceInUp" data-wow-delay="0.05s">
                   <div class="img__skill">
                     <img src="./img/html.svg" alt="">
                   </div>
-                  <div class="details__skill">
+                  <div class="details__skill ">
                     <div class="tp_detail__skill">
                       <div class="detail_name_skill">
                         <h4>HTML / CSS</h4>
@@ -163,7 +156,7 @@
                     <div class="bm_detail__skill" data-prograss="500"></div>
                   </div>
                 </div>
-                <div class="item__skill">
+                <div class="item__skill wow bounceInUp" data-wow-delay="0.055s">
                   <div class="img__skill">
                     <img src="./img/js.svg" alt="">
                   </div>
@@ -178,7 +171,7 @@
                     <div class="bm_detail__skill" data-prograss="80"></div>
                   </div>
                 </div>
-                <div class="item__skill">
+                <div class="item__skill wow bounceInUp" data-wow-delay="0.06s">
                   <div class="img__skill">
                     <img src="./img/REACT.svg" alt="">
                   </div>
@@ -196,7 +189,7 @@
                   </div>
 
                 </div>
-                <div class="item__skill">
+                <div class="item__skill wow bounceInUp" data-wow-delay="0.065s">
                   <div class="img__skill">
                     <img src="./img/jquery_original_wordmark_logo_icon_146447.svg" alt="">
                   </div>
@@ -216,11 +209,11 @@
             <div class="other_skill">
               <h3>Other Skills</h3>
               <div class="other_skill_content">
-                <img src="./img/git_plain_wordmark_logo_icon_146508.svg" title='git' alt="">
-                <img src="./img/github_original_wordmark_logo_icon_146506.svg" title='github' alt="">
-                <img src="./img/bootstrap_plain_wordmark_logo_icon_146620.svg" title='bootstrap' alt="">
-                <img src="./img/materialize.png" alt="">
-                <img src="./img/tailwindcss-icon.svg" title='tailwind css' alt="">
+                <img src="./img/git_plain_wordmark_logo_icon_146508.svg" class='wow bounceInRight' data-wow-delay="0.05s" title='git' alt="">
+                <img src="./img/github_original_wordmark_logo_icon_146506.svg" class='wow bounceInRight' data-wow-delay="0.055s" title='github' alt="">
+                <img src="./img/bootstrap_plain_wordmark_logo_icon_146620.svg" class='wow bounceInRight' data-wow-delay="0.06s" title='bootstrap' alt="">
+                <img src="./img/materialize.png" class='wow bounceInRight' data-wow-delay="0.065s" alt="">
+                <img src="./img/tailwindcss-icon.svg " class='wow bounceInRight' data-wow-delay="0.07s" title='tailwind css' alt="">
               </div>
             </div>
           </div>
@@ -243,14 +236,17 @@
 
           <div class="projects__section ">
 
+
+
+
             <div class="project__filter">
               <button class="btn all active" onclick="fitlerFunction('all')">All</button>
-              <button class="btn web" onclick="fitlerFunction('javascript')" >Web Developer</button>
-              <button class="btn front_react"onclick="fitlerFunction('react')" >Front End With React</button>
+              <button class="btn web" onclick="fitlerFunction('javascript')" >WebDeveloper</button>
+              <button class="btn front_react"onclick="fitlerFunction('react')" >FrontEnd</button>
             </div>
             <div class="container__projects">
 
-              <div class="item__project">
+              <div class="item__project wow bounceInUp" data-wow-delay='0.05s'>
                 <div class="img__project">
                   <img src="./img/elbadr3.png" alt="">
                   <img src="./img/elbadr.png">
@@ -284,6 +280,12 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
       integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
       crossorigin="anonymous"></script> -->
+
+    <!-- Wow.js  -->
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
 
     <!-- main Javascript file  -->
     <script src="./js/main.js"></script>
