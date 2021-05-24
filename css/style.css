@@ -1037,15 +1037,16 @@ nav .list__links {
 
 .container__projects {
   width: 100%;
-  /* min-height: 100vh; */
+  min-height: 60vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: auto;
   padding: 2.5rem;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 2rem;
+  overflow: hidden;
 }
 
 @media (max-width: 420px) {
