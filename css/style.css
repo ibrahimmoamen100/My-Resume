@@ -37,6 +37,7 @@
 }
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 @media (max-width: 420px) {
@@ -50,6 +51,7 @@ html {
   width: 100%;
   margin: auto;
   font-family: chela;
+  /* overflow: hidden; */
 }
 .weave {
   display: block;
@@ -475,12 +477,9 @@ nav .list__links {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  /* flex-wrap: wrap; */
   align-items: flex-start;
   font-size: 1rem;
-  /* font-size: 3vw; */
   padding-top: 15rem;
-  /* min-height: 100vh; */
 }
 
 @media (max-width: 600px) {
