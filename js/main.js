@@ -190,6 +190,28 @@ let projects = [
     wow: "bounceInLeft",
     wowDelay: "0.05s",
   },
+  {
+    id: 5,
+    link: "https://ibrahimmoamen100.github.io/SA-Attack/",
+    title: "Sudden Attack",
+    details: "website for single personal shooter game",
+    lang: "all HTML CSS javascript",
+    img1: "sa2.png",
+    img2: "sa1.png",
+    wow: "bounceInUp",
+    wowDelay: "0.05s",
+  },
+  {
+    id: 6,
+    link: "https://ibrahimmoamen100.github.io/developer-community/index.html",
+    title: "Developer Community",
+    details: "website for developer communtiy",
+    lang: "all HTML CSS javascript",
+    img1: "developer-com2.png",
+    img2: "developer-com.png",
+    wow: "bounceInRight",
+    wowDelay: "0.03s",
+  },
 ]
 let projectSection = document.querySelector(".container__projects")
 
