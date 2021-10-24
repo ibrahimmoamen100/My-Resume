@@ -6,23 +6,27 @@ $(".icon__humberger").click(function () {
   if ($(this).hasClass("active")) {
     $(".list__links_menu").toggleClass("active")
     $(".menu__section").css({
-      top: "0",
-      transition: "top 0.5s ease-in-out",
+      transform: "translate(0%, 0%)",
+      transition: " all 0.5s ease-out",
       opacity: "1",
+      borderEndStartRadius: "0%",
     })
   } else {
     $(".menu__section").css({
-      top: "-105%",
-      transition: " all 0.2s ease-in-out",
+      transform: "translate(105%, -105%)",
+      transition: " all 0.5s ease-in-out",
       opacity: "0",
+      borderEndStartRadius: "100%",
     })
     $(".list__links_menu").removeClass("active")
   }
 })
 $(".menu__section").click(function () {
   $(".menu__section").css({
-    top: "-105%",
+    transform: "translate(105%, -105%)",
     transition: " all 0.2s ease-in-out",
+    borderEndStartRadius: "100%",
+
     opacity: "0",
   })
   $(".icon__humberger").removeClass("active")
@@ -72,7 +76,7 @@ function typeWriterr() {
     setTimeout(typeWriterr, speed)
   }
 }
-setTimeout(typeWriterr, 2500)
+setTimeout(typeWriterr, 2000)
 
 //TODO: Career Writer
 function careerWriter() {
@@ -98,7 +102,7 @@ setTimeout(careerWriter, 3500)
 window.addEventListener("scroll", function () {
   let value = window.scrollY * 0.7
   let weave = document.querySelector(".weave")
-  weave.style.transform = `rotateX(${value > 180 ? 180 : value}deg)`
+  // weave.style.transform = `rotateX(${value > 180 ? 180 : value}deg)`
 })
 
 // TODO: Hidden Weave When Scroll
@@ -108,13 +112,13 @@ window.addEventListener("scroll", function () {
   let navbar = document.querySelector(".nav__bar")
   let x = window.scrollY
 
-  if (x >= 100) {
-    weave.style.opacity = "0"
-    weave.style.visibility = "hidden"
-  } else {
-    weave.style.opacity = "1"
-    weave.style.visibility = "visible"
-  }
+  // if (x >= 100) {
+  //   weave.style.opacity = "0"
+  //   weave.style.visibility = "hidden"
+  // } else {
+  //   weave.style.opacity = "1"
+  //   weave.style.visibility = "visible"
+  // }
 })
 
 // TODO: Scroll Top = Hidden Navbar
@@ -228,7 +232,7 @@ function fitlerFunction(lang = "all") {
     <div class="detail__project">
       <h1>${proj.title}</h1>
       <span>${proj.details}</span>
-      <a href="${proj.link}" target="_blank">Show Project</a>
+      <a href="${proj.link}" target="_blank"> <span>Show Project<span/></a>
     </div>
   </div>  
   `
@@ -237,4 +241,18 @@ function fitlerFunction(lang = "all") {
 }
 fitlerFunction((lang = "all"))
 
-// TODO: Add Class Active to fitler buttons
+//TODO: Add Class Active to fitler buttons
+
+const resumeBtn = document.querySelector(".my__resume")
+
+window.addEventListener("scroll", () => {
+  const btnResume = resumeBtn.getBoundingClientRect()
+  console.log(btnResume)
+  if (btnResume.top < 0) {
+    console.log("yes its smaller then zero")
+    resumeBtn.style.animation = "scrolly 0.8s ease-in-out 0s 1 both"
+  } else if (window.scrollY == 0) {
+    resumeBtn.style.animation = "none"
+    resumeBtn.style.position = "relative"
+  }
+})
