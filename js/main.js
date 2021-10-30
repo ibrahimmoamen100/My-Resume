@@ -256,14 +256,14 @@ fitlerFunction((lang = "all"))
 
 const resumeBtn = document.querySelector(".my__resume")
 
-window.addEventListener("scroll", () => {
-  const btnResume = resumeBtn.getBoundingClientRect()
-  console.log(btnResume)
-  if (btnResume.top < 0) {
-    console.log("yes its smaller then zero")
-    resumeBtn.style.animation = "scrolly 0.8s ease-in-out 0s 1 both"
-  } else if (window.scrollY == 0) {
-    resumeBtn.style.animation = "none"
-    resumeBtn.style.position = "relative"
-  }
-})
+// window.addEventListener("scroll", () => {
+//   const btnResume = resumeBtn.getBoundingClientRect()
+//   console.log(btnResume)
+//   if (btnResume.top < 0) {
+//     console.log("yes its smaller then zero")
+//     resumeBtn.style.animation = "scrolly 0.8s ease-in-out 0s 1 both"
+//   } else if (window.scrollY == 0) {
+//     resumeBtn.style.animation = "none"
+//     resumeBtn.style.position = "relative"
+//   }
+// })

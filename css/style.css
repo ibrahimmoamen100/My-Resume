@@ -418,7 +418,7 @@ nav .list__links {
 
   100% {
     position: fixed;
-    transform: translate(550%, 785%);
+    transform: translate(720%, 785%);
     /* bottom: 0;
     right: 0; */
   }
