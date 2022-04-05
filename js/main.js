@@ -84,19 +84,19 @@ function careerWriter() {
 
   var typewriter = new Typewriter(app, {
     loop: true,
-    delay: 50,
+    delay: 100,
   })
 
   typewriter
     .start()
-    .typeString("I Work As Front End Developer")
+    .typeString("Front End Web Developer")
     .pauseFor(2500)
-    .deleteChars(9)
-    .typeString("with React Library")
+    // .deleteChars(9)
+    .typeString(" | React JS Library")
     .pauseFor(2500)
-    .deleteAll(1)
+    .deleteAll(50)
 }
-setTimeout(careerWriter, 3500)
+setTimeout(careerWriter, 4000)
 
 //TODO:  Weave SVG Rotate
 window.addEventListener("scroll", function () {
@@ -164,7 +164,7 @@ let projects = [
   {
     id: 2,
     link: "https://ibrahimmoamen100.github.io/Collection-Icons-App/",
-    title: "Favorite Website Links",
+    title: "Favourite Links",
     details: "Web Application for Collecting your Favorite Website",
     lang: "all HTML CSS javascript",
     img1: "app1.png",
@@ -267,3 +267,57 @@ const resumeBtn = document.querySelector(".my__resume")
 //     resumeBtn.style.position = "relative"
 //   }
 // })
+
+let skillSection = document.querySelector(".skills")
+let numbers = document.querySelectorAll(".prograss_num__skill")
+
+let spans = document.querySelectorAll(".bm_detail__skill_prograss")
+let started = false
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= skillSection.offsetTop) {
+    spans.forEach((span) => {
+      span.style.width = span.dataset.width
+    })
+  } else {
+    spans.forEach((span) => {
+      span.style.width = "0px"
+    })
+  }
+})
+
+let startCount = (el) => {
+  let goal = el.dataset.number
+
+  let counter = setInterval(() => {
+    el.textContent++
+
+    if (el.textContent == goal) {
+      clearInterval(counter)
+    }
+  }, 1000 / goal)
+}
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= skillSection.offsetTop) {
+    if (!started) numbers.forEach((el) => startCount(el))
+    started = true
+  }
+})
+
+// title about section
+let titleSectionAbout = document.querySelector(".title__section_about")
+let about = document.querySelector(".about")
+window.addEventListener("scroll", () => {
+  let value = window.scrollY
+
+  titleSectionAbout.style.left = (2.2 * value) / 100 + "%"
+})
+
+// title skill section
+
+let titleSkill = document.querySelector(".title__section_skill")
+window.addEventListener("scroll", () => {
+  value = window.scrollY
+  titleSkill.style.left = (2.5 * value) / 100 + "%"
+})

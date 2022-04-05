@@ -43,6 +43,7 @@ html {
 @media (max-width: 420px) {
   html {
     font-size: 3.125vw;
+    overflow-x: hidden;
   }
 }
 
@@ -384,7 +385,7 @@ nav .list__links {
   /* color: var(--main-color); */
   word-break: break-word;
   font-weight: 800;
-  font-size: 3.2rem;
+  font-size: clamp(40px, 6vw, 70px);
   color: var(--secondary-color);
   /* padding-top: 100px; */
   font-family: "Abril Fatface", cursive;
@@ -397,7 +398,7 @@ nav .list__links {
   font-size: 1.5em;
   cursor: pointer;
   padding: 1em 2em;
-  border: 1px solid rgba(41, 41, 41, 0.89);
+  border: 1px solid rgba(41, 41, 41, 0.3);
   background-color: #fff;
   /* border-radius: 0.4em; */
   font-family: Ubuntu;
@@ -562,6 +563,33 @@ nav .list__links {
     padding-top: 10rem;
   }
 }
+
+/* @media (max-width: 600px) {
+  .title__section_skill {
+    top: 10%;
+  }
+} */
+
+.title__section_about {
+  font-size: 8em;
+  position: absolute;
+  font-weight: 800;
+  top: 60%;
+  right: 100%;
+  font-family: "Abril Fatface", cursive;
+  color: rgba(93, 93, 93, 0.112);
+  width: 100%;
+}
+
+.title__section_skill {
+  font-size: 8em;
+  position: absolute;
+  font-weight: 800;
+  top: 80%;
+  left: -100%;
+  font-family: "Abril Fatface", cursive;
+  color: rgba(93, 93, 93, 0.112);
+}
 .title__section {
   font-size: 8em;
   position: absolute;
@@ -569,6 +597,7 @@ nav .list__links {
   top: 50%;
   right: 100%;
   font-family: "Abril Fatface", cursive;
+  overflow: hidden;
 }
 
 .global__section {
@@ -729,6 +758,7 @@ nav .list__links {
   white-space: pre-line;
   margin-bottom: 2.5rem;
   letter-spacing: 0.2rem;
+  font-weight: bold;
 }
 @media (max-width: 420px) {
   .info_about_section .about_name {
@@ -753,56 +783,41 @@ nav .list__links {
 
 .img__about {
   position: relative;
-  /* box-shadow: 0px 63px 154px -20px rgb(7 33 66 / 50%); */
-  width: 100%;
-  max-width: 450px;
-  min-width: 350px;
-  /* height: 100%; */
-  max-height: 450px;
-  min-height: 200px;
-  height: 450px;
+  height: clamp(450px, 20vh, 650px);
+  width: contain;
   z-index: 1;
-  /* overflow: hidden; */
 }
 
-@media (prefers-reduced-motion: reduce) {
-}
 .img__about::before {
   content: "";
-  width: 100%;
-  height: 100%;
   position: absolute;
   display: inline-block;
   border: 0.18rem solid var(--color-font);
-  /* background-color: rgb(0, 0, 0); */
   top: 2.5rem;
   left: 2.5rem;
   filter: brightness(1);
   background-color: white;
-  /* z-index: 2; */
 }
 .img__about > img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   position: absolute;
-  object-fit: fill;
-  bottom: 0;
-  left: 0;
+  object-fit: cover;
+  height: 100%;
   filter: grayscale(20);
   transition: 0.3s ease-in-out;
 }
 .img__about > img:hover {
   filter: grayscale(0);
-  box-shadow: 0px 63px 154px -20px rgb(7 33 66 / 50%);
 }
 
 @media (max-width: 1000px) {
   .img__about {
     z-index: 1;
-    width: 30rem;
-    height: 30rem;
+    /* width: 30rem;
+    height: 30rem; */
     /* overflow: hidden; */
+    height: clamp(350px, 15vh, 550px);
   }
 }
 @media (max-width: 420px) {
@@ -810,6 +825,8 @@ nav .list__links {
     z-index: 1;
     width: 20rem;
     height: 20rem;
+    height: clamp(250px, 13vh, 400px);
+
     /* overflow: hidden; */
   }
   .img__about > img,
@@ -1014,13 +1031,21 @@ nav .list__links {
   }
 }
 .bm_detail__skill::before {
-  content: "";
-  width: 20%;
+  content: attr(data-progress);
+  width: attr(data-progress px);
   display: inline-block;
   background-color: var(--main-color);
+  background-color: red;
+  color: blue;
   position: absolute;
   top: 0;
   height: 100%;
+}
+.bm_detail__skill_prograss {
+  background: var(--main-color);
+  display: block;
+  height: 100%;
+  transition: 0.8s ease-out;
 }
 
 .other_skill,
@@ -1149,9 +1174,8 @@ nav .list__links {
   border-radius: 0.5rem;
   overflow: hidden;
   transition: 0.2s ease-in-out;
-  border: 0.1rem solid rgba(88, 88, 88, 0.239);
+  border: 0.1rem solid rgba(88, 88, 88, 0.098);
   /* box-shadow: 0px 0px 5rem rgba(128, 128, 128, 0.322); */
-  flex: 1;
 }
 
 @media (max-width: 600px) {
@@ -1171,7 +1195,7 @@ nav .list__links {
 .item__project:hover {
   border: 0.1rem solid transparent;
 
-  box-shadow: 0.1rem 0.2rem 1rem rgba(128, 128, 128, 0.417);
+  box-shadow: 0.1rem 0.2rem 1rem rgba(134, 134, 134, 0.176);
 }
 
 .item__project:hover .img__project img:nth-child(1) {
@@ -1316,4 +1340,37 @@ nav .list__links {
 }
 .detail__project > a:hover {
   border: 0.1rem solid transparent;
+}
+
+footer {
+  margin-top: 5em;
+  background-color: var(--main-color);
+  width: 100%;
+  min-height: 5rem;
+  padding: 2em 1em;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.footer__links > li a {
+  padding: 1em;
+}
+.footer__links > li a i {
+  font-size: 2.8em;
+  color: white;
+}
+.footer__links > li a i:hover {
+  color: #333;
+}
+.createdBy__span {
+  color: white;
+  text-align: center;
+  display: block;
+  padding: 2em;
+  margin: auto;
+  font-size: 1.2em;
 }
