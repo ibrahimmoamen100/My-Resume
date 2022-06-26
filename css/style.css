@@ -46,7 +46,12 @@ html {
     overflow-x: hidden;
   }
 }
-
+@media (max-width: 250px) {
+  html {
+    font-size: 3vw;
+    overflow-x: hidden;
+  }
+}
 .container {
   max-width: 1200px;
   width: 100%;
@@ -58,6 +63,7 @@ html {
 .entire__container {
   background-color: transparent;
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* start navbar  */
