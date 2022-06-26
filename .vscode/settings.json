@@ -9,7 +9,7 @@
   "files.autoSave": "onFocusChange",
   "editor.formatOnSave": true,
   "editor.suggestSelection": "first",
-  "terminal.integrated.fontFamily": "fira code",
+  "terminal.integrated.fontFamily": "monospace",
   "terminal.integrated.fontSize": 16,
   "editor.fontFamily": "Fira Code,Consolas, 'Courier New', monospace",
   "workbench.colorTheme": "Default Dark+",
